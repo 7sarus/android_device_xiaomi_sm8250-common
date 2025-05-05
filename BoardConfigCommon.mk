@@ -180,8 +180,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS ?= $(COMMON_PATH)
 
+ifneq ($(TARGET_IS_TABLET),true)
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
+endif
 
 # Rootdir
 ifeq ($(TARGET_IS_VAB),true)
